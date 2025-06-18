@@ -3,6 +3,9 @@ return {
   opts = {
     default_file_explorer = true,
     use_default_keymaps = true,
+    view_options = {
+      show_hidden = true,
+    },
   },
   keys = {
     {
@@ -10,7 +13,6 @@ return {
       function()
         require("oil").open()
       end,
-      desc = "Oil (Current Dir Float)",
     },
   },
   dependencies = { "nvim-tree/nvim-web-devicons" },

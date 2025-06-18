@@ -2,23 +2,25 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Tabs
+-- Cursor, Command Line, and Fill Characters
+vim.opt.cursorline = false
+vim.opt.fillchars = { eob = " " }
+vim.opt.cmdheight = 0
+vim.opt.showmode = false
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+
+-- Tabs and Indentation
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-
--- Indent
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
--- File Backup
+-- File Handling
 vim.opt.swapfile = false
 vim.opt.undofile = true
-vim.o.writebackup = false
+vim.opt.writebackup = false
 
--- Other
-vim.o.cursorline = false
-vim.opt.fillchars = {eob = " "}
-vim.o.showmode = false
-vim.opt.cmdheight = 0
+-- Colors
+vim.opt.termguicolors = true

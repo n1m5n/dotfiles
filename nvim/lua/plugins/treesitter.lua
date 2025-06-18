@@ -12,11 +12,7 @@ return {
           "html",
           "css",
           "javascript",
-          "typescript",
-          "c",
           "java",
-          "csv",
-          "json"
         },
         highlight = { enable = true },
         indent = { enable = false },

@@ -15,10 +15,14 @@ vim.keymap.set('n', '<C-h>', function() vim.cmd('wincmd h') end, opts)
 vim.keymap.set('n', '<C-l>', function() vim.cmd('wincmd l') end, opts)
 
 -- Tabs
-vim.keymap.set('n', '<leader>to', function() vim.cmd('tabnew') end, opts)   
-vim.keymap.set('n', '<leader>tx', function() vim.cmd('tabclose') end, opts)
-vim.keymap.set('n', '<leader>tl', function() vim.cmd('tabn') end, opts)
-vim.keymap.set('n', '<leader>th', function() vim.cmd('tabp') end, opts)
+vim.keymap.set('n', '<leader>to', ':enew<CR>', opts)
+vim.keymap.set('n', '<leader>tx', ':bd<CR>', opts)
+vim.keymap.set('n', '<leader>tl', ':bnext<CR>', opts)
+vim.keymap.set('n', '<leader>th', ':bprevious<CR>', opts)
 
 -- Escape easier
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
+
+-- For Lua config (e.g., in `init.lua`)
+vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
+
