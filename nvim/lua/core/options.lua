@@ -5,9 +5,8 @@ vim.opt.relativenumber = true
 -- Cursor, Command Line, and Fill Characters
 vim.opt.cursorline = false
 vim.opt.fillchars = { eob = " " }
-vim.opt.cmdheight = 0
 vim.opt.showmode = false
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+vim.opt.guicursor = ""
 
 -- Tabs and Indentation
 vim.opt.tabstop = 4
@@ -24,3 +23,6 @@ vim.opt.writebackup = false
 
 -- Colors
 vim.opt.termguicolors = true
+
+-- Intro message
+vim.opt.shortmess:append("I")
