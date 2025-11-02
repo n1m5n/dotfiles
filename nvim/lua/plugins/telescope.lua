@@ -1,5 +1,6 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim', 
+    tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' },
 
     config = function()
@@ -14,9 +15,15 @@ return {
             },
         })
 
+        -- Keymaps
         vim.keymap.set('n', '<leader>ff', builtin.find_files)
         vim.keymap.set('n', '<leader>fg', builtin.live_grep)
         vim.keymap.set('n', '<leader>fb', builtin.buffers)
+
+        -- Fuzzy find from home directory
+        vim.keymap.set('n', '<leader>fr', function()
+            builtin.find_files({ cwd = vim.fn.expand("~"), hidden = true })
+        end)
     end
 }
 

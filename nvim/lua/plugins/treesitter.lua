@@ -9,10 +9,7 @@ return {
                 ensure_installed = {
                     "lua",
                     "python",
-                    "html",
-                    "css",
-                    "javascript",
-                    "java",
+                    "cpp",
                 },
                 highlight = { enable = true },
                 indent = { enable = false },
