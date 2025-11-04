@@ -1,124 +1,70 @@
-// Workbench Settings
 {
-  "workbench.colorTheme": "Catppuccin Frappé",
-  "workbench.startupEditor": "none",
-  "workbench.iconTheme": "symbols",
-  "workbench.sideBar.location": "right",
-  "workbench.activityBar.location": "hidden",
-  "workbench.layoutControl.enabled": false,
-  "workbench.tips.enabled": false,
-  "workbench.tree.enableStickyScroll": false,
-  "workbench.tree.renderIndentGuides": "none",
-  "workbench.tree.indent": 8,
-  "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#F2D5CF",
-    "terminalCursor.foreground": "#F2D5CF"
-  },
-  "workbench.editorAssociations": {
-    "*.hex": "hexEditor.hexedit",
-    "*.ini": "hexEditor.hexedit"
-  },
-  "workbench.editor.empty.hint": "hidden",
+    // Workbench Settings
+    "window.zoomLevel": 3,
+    "workbench.activityBar.location": "hidden",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editorAssociations": {
+        "*.hex": "hexEditor.hexedit",
+        "*.ini": "hexEditor.hexedit"
+    },
+    "workbench.layoutControl.enabled": false,
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": false,
+    "workbench.tips.enabled": false,
+    "workbench.tree.indent": 8,
+    "workbench.tree.renderIndentGuides": "none",
 
-  // Editor Settings
-  "editor.formatOnSave": true,
-  "editor.fontSize": 20,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.renderWhitespace": "none",
-  "editor.wordWrap": "on",
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.renderLineHighlight": "none",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.occurrencesHighlight": "off",
-  "editor.selectionHighlight": false,
-  "editor.semanticHighlighting.enabled": true,
-  "editor.fontFamily": "MesloLGL Nerd Font",
-  "editor.stickyScroll.enabled": false,
-  "editor.cursorWidth": 3,
-  "editor.codeLens": false,
-  "editor.matchBrackets": "never",
-  "editor.parameterHints.enabled": false,
-  "editor.hover.enabled": false,
-  "editor.showFoldingControls": "never",
-  "editor.guides.indentation": false,
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.overviewRulerBorder": false,
-  "editor.suggestOnTriggerCharacters": false,
-  "editor.tabCompletion": "on",
-  "editor.snippetSuggestions": "top",
-  "editor.lightbulb.enabled": "off",
-  "editor.rulers": [],
-  "editor.tabSize": 4,
-  "editor.cursorBlinking": "expand",
-  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+    // Editor Settings
+    "breadcrumbs.enabled": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.codeLens": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "line",
+    "editor.fontFamily": "FiraMono Nerd Font",
+    "editor.fontSize": 16,
+    "editor.glyphMargin": false,
+    "editor.guides.indentation": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.lightbulb.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "none",
+    "editor.renderWhitespace": "none",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.selectionHighlight": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.snippetSuggestions": "top",
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.tabCompletion": "on",
+    "editor.tabSize": "4",
 
-  // File Settings
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.autoSave": "afterDelay",
+    // File Settings
+    "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
 
-  // Explorer Settings
-  "explorer.decorations.colors": true,
-  "explorer.compactFolders": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.decorations.badges": false,
+    // Explorer Settings
+    "explorer.confirmDragAndDrop": false,
+    "explorer.decorations.badges": false,
+    "explorer.decorations.colors": true,
 
-  // Git Settings
-  "git.autofetch": true,
-  "git.enableSmartCommit": true,
-  "git.decorations.enabled": false,
-  "git.confirmSync": false,
+    // Git Settings
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
 
-  // GitHub Copilot Settings
-  "github.copilot.editor.enableAutoCompletions": false,
+    // Terminal Settings
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "FiraMono Nerd Font",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
 
-  // Security Settings
-  "security.workspace.trust.untrustedFiles": "open",
-
-  // Window Settings
-  "window.commandCenter": false,
-  "window.titleBarStyle": "custom",
-  "window.zoomLevel": 2,
-
-  // Terminal Settings
-  "terminal.integrated.fontSize": 18,
-  "terminal.integrated.fontFamily": "MesloLGL Nerd Font",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.minimumContrastRatio": 1,
-  "terminal.integrated.cursorWidth": 3,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-  "terminal.integrated.fontLigatures.enabled": true,
-
-  // Source Control Settings
-  "scm.diffDecorations": "none",
-
-  // Extensions Settings
-  "extensions.ignoreRecommendations": true,
-  "code-runner.runInTerminal": true,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.donotVerifyTags": true,
-
-  // Emmet Settings
-  "emmet.triggerExpansionOnTab": true,
-
-  // Language Specific Settings
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "python.analysis.autoFormatStrings": true,
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // Theme Specific Settings
-  "catppuccin.accentColor": "rosewater",
-  "catppuccin.italicKeywords": false,
-
-  // Spell Check Settings
-  "cSpell.userWords": ["Catppuccin"]
+    // Other
+    "C_Cpp.default.compilerPath": "c:\\msys64\\ucrt64\\bin\\g++.exe",
+    "python.analysis.typeCheckingMode": "standard",
+    "extensions.ignoreRecommendations": true,
 }
+

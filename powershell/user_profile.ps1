@@ -1,29 +1,32 @@
-# No highlighting for ls
+try {
+    [Console]::InputEncoding  = [System.Text.Encoding]::UTF8
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    $OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+    chcp 65001 > $null
+} catch {}
+
+# Stop highlighting dirs
 $PSStyle.FileInfo.Directory = ""
 
-# Git
-Set-Alias g git
+# Stop pwsh version print
+cls
 
-# Zoxide (better cd)
-Remove-Item Alias:cd -ErrorAction SilentlyContinue
-Set-Alias cd z
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
-$env:_ZOXIDE_MAX_AGE = "0"
+# Aliases
+Set-Alias vim nvim
+Set-Alias c Clear-Host
+Set-Alias g git
 
 # Eza (better ls)
 Remove-Item Alias:ls -ErrorAction SilentlyContinue
 function ls {
-    & eza --long --icons --no-permissions --no-user
+    & eza -a --icons
+}
+function ll {
+    & eza -la --icons
 }
 
-# Oh-My-Posh (Prompt)
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/robbyrussell.omp.json" | Invoke-Expression
+# Start up fastfetch
+if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
+    fastfetch -c "C:/Users/Naman/.config/fastfetch/config.jsonc"
+}
 
-# Create spacing after and before commands
-if (-not (Test-Path function:originalPrompt)) {
-    $function:originalPrompt = $function:prompt
-}
-function prompt {
-    Write-Host ""
-    & $function:originalPrompt
-}
