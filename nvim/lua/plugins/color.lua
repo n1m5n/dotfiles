@@ -1,12 +1,19 @@
 return {
-    "vague-theme/vague.nvim",
-    lazy = false,
+    "folke/tokyonight.nvim",
     priority = 1000,
     config = function()
-        require("vague").setup({
-            bold = false,
+        require("tokyonight").setup({
+            style = "night",
+            terminal_colors = true,
+            styles = {
+                comments = {},
+                keywords = {},
+                functions = {},
+                variables = {},
+            },
         })
-        vim.cmd("colorscheme vague")
-    end
+
+        vim.cmd("colorscheme tokyonight")
+    end,
 }
 

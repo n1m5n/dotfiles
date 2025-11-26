@@ -1,14 +1,14 @@
--- Line Numbers
+-- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Cursor, Command Line, and Fill Characters
+-- Default
 vim.opt.cursorline = false
 vim.opt.fillchars = { eob = " " }
 vim.opt.showmode = false
 vim.opt.guicursor = ""
 
--- Tabs and Indentation
+-- Tabs
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -16,7 +16,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
--- File Handling
+-- Files
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.writebackup = false

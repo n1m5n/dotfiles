@@ -1,10 +1,10 @@
-# Admin
+# Admin 
 If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltinRole] "Administrator")) {
     Write-Warning "Please run this script as Admin."
     Exit
 }
 
-# Install Chocolatey incase not installed already
+#  Install Choco if not installed
 Function Install-Choco {
     if (-Not (Get-Command choco -ErrorAction SilentlyContinue)) {
         Write-Host "Chocolatey not found. Installing..."
@@ -16,10 +16,10 @@ Function Install-Choco {
     }
 }
 
-# Install Chocolatey
+# Start Chocolatey
 Install-Choco
 
-# Refresh environment variables to make choco available immediately
+# Refresh env
 $env:Path += ";$env:ALLUSERSPROFILE\chocolatey\bin"
 
 $packages = @(
@@ -28,32 +28,27 @@ $packages = @(
     "file",
     "fzf",
     "git",
-    "llvm",              # includes clangd
-    "lua",
+    "llvm",
+    "lua-language-server",
     "luarocks",
     "make",
+    "mingw",
     "neovim",
-    "nodejs-lts",        # for npm
+    "nodejs-lts",
     "oh-my-posh",
     "python",
     "ripgrep",
-    "cmake",
-    "gcc"
+    "cmake"
 )
 
 Write-Host "Installing packages via Chocolatey..."
 choco install $packages -y --ignore-checksums
 
-# lua_ls
-if (-Not (Get-Command lua-language-server -ErrorAction SilentlyContinue)) {
-    Write-Host "Lua Language Server not found. Installing..."
-    choco install lua-language-server -y
-}
-
-# pyright
+# Install Pyright via npm if missing
 if (-Not (Get-Command pyright -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Pyright..."
     npm install -g pyright
 }
 
-Write-Host "Installed."
+Write-Host "All requested packages installed."
+

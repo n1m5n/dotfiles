@@ -32,14 +32,14 @@ HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
-# Normal Aliases
+# Normal aliases
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias ff='fastfetch'
 alias cat='bat'
 
-# Git Aliases
+# Git aliases
 alias g='git'
 alias gs='git status'
 alias gl='git pull'
@@ -54,5 +54,5 @@ export PATH="$HOME/.local/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/default
 export PATH=$JAVA_HOME/bin:$PATH
 
-# Nvim Manpager
+# Nvim manpager
 export MANPAGER='nvim +Man!'
