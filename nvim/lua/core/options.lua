@@ -3,10 +3,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Default
-vim.opt.cursorline = false
-vim.opt.fillchars = { eob = " " }
+vim.opt.cursorline = true
 vim.opt.showmode = false
-vim.opt.guicursor = ""
 
 -- Tabs
 vim.opt.tabstop = 4
