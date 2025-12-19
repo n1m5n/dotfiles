@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent = true }
+
 -- Leader Key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -14,15 +16,19 @@ vim.keymap.set('n', '<C-j>', function() vim.cmd('wincmd j') end, opts)
 vim.keymap.set('n', '<C-h>', function() vim.cmd('wincmd h') end, opts)
 vim.keymap.set('n', '<C-l>', function() vim.cmd('wincmd l') end, opts)
 
--- Tabs
+-- Buffers
 vim.keymap.set('n', '<leader>to', ':enew<CR>', opts)
 vim.keymap.set('n', '<leader>tx', ':bd<CR>', opts)
 vim.keymap.set('n', '<leader>tl', ':bnext<CR>', opts)
 vim.keymap.set('n', '<leader>th', ':bprevious<CR>', opts)
 
 -- Escape easier
-vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
+vim.keymap.set("i", "jj", "<Esc>", opts)
 
--- Highlight stop
-vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
+-- Stop highlight
+vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', opts)
+
+-- For visible lines
+vim.api.nvim_set_keymap('n', 'j', 'gj', opts)
+vim.api.nvim_set_keymap('n', 'k', 'gk', opts)
 

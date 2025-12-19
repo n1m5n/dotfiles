@@ -11,6 +11,7 @@ return {
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
+
             cmp.setup({
                 snippet = {
                     expand = function(args)
@@ -23,17 +24,18 @@ return {
                     ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
-                    { name = "nvim_lsp", priority = 1000 },
-                    { name = "luasnip", priority = 750 },
-                    { name = "buffer", priority = 500 },
-                    { name = "path", priority = 250 },
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
+                    { name = "buffer" },
+                    { name = "path" },
                 }),
-                completion = {
-                    keyword_length = 1,
-                },
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    completion = cmp.config.window.bordered({
+                        max_height = 20,
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        max_height = 20,
+                    }),
                 },
             })
         end,

@@ -38,7 +38,7 @@ function raybuild {
         [string]$file
     )
 
-    # Use the reg file name
+    # Use the file name as-is
     $exe = [System.IO.Path]::GetFileNameWithoutExtension($file)
 
     # Compile using the exact command that works
