@@ -10,6 +10,11 @@ return {
                     "lua",
                     "python",
                     "cpp",
+                    "c",
+                    "html",
+                    "javascript",
+                    "vim",
+                    "vimdoc"
                 },
                 highlight = { enable = true },
                 indent = { enable = false },

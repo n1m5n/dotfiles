@@ -1,34 +1,38 @@
 local opts = { noremap = true, silent = true }
 
--- Leader Key
+-- Leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Save File
-vim.keymap.set('n', '<leader>s', '<cmd>w<cr>', opts)
+-- Save file
+vim.keymap.set('n', '<leader>s', '<cmd>w<CR>', opts)
 
--- Quit File
-vim.keymap.set('n', '<C-q>', '<cmd>q<cr>', opts)
+-- Quit file
+vim.keymap.set('n', '<C-q>', '<cmd>q<CR>', opts)
 
--- Navigate Splits
-vim.keymap.set('n', '<C-k>', function() vim.cmd('wincmd k') end, opts)
-vim.keymap.set('n', '<C-j>', function() vim.cmd('wincmd j') end, opts)
-vim.keymap.set('n', '<C-h>', function() vim.cmd('wincmd h') end, opts)
-vim.keymap.set('n', '<C-l>', function() vim.cmd('wincmd l') end, opts)
+-- Create splits
+vim.keymap.set('n', '<leader>vs', '<cmd>vsplit<CR>', opts)
+vim.keymap.set('n', '<leader>sp', '<cmd>split<CR>', opts)
+
+-- Navigate splits
+vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 -- Buffers
-vim.keymap.set('n', '<leader>to', ':enew<CR>', opts)
-vim.keymap.set('n', '<leader>tx', ':bd<CR>', opts)
-vim.keymap.set('n', '<leader>tl', ':bnext<CR>', opts)
-vim.keymap.set('n', '<leader>th', ':bprevious<CR>', opts)
+vim.keymap.set('n', '<leader>to', '<cmd>enew<CR>', opts)
+vim.keymap.set('n', '<leader>tx', '<cmd>bd<CR>', opts)
+vim.keymap.set('n', '<leader>tl', '<cmd>bnext<CR>', opts)
+vim.keymap.set('n', '<leader>th', '<cmd>bprevious<CR>', opts)
 
 -- Escape easier
-vim.keymap.set("i", "jj", "<Esc>", opts)
+vim.keymap.set('i', 'jj', '<Esc>', opts)
 
 -- Stop highlight
-vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', opts)
+vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>', opts)
 
 -- For visible lines
-vim.api.nvim_set_keymap('n', 'j', 'gj', opts)
-vim.api.nvim_set_keymap('n', 'k', 'gk', opts)
+vim.keymap.set('n', 'j', 'gj', opts)
+vim.keymap.set('n', 'k', 'gk', opts)
 

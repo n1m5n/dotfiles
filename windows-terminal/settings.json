@@ -3,7 +3,7 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
     "copyFormatting": "none",
-    "copyOnSelect": false,
+    "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "keybindings": 
     [
@@ -20,6 +20,7 @@
             "keys": "alt+shift+d"
         }
     ],
+    "language": "en-US",
     "newTabMenu": 
     [
         {
@@ -31,15 +32,18 @@
         "defaults": 
         {
             "colorScheme": "Tokyo Night",
+            "elevate": false,
             "font": 
             {
-                "face": "JetBrainsMono Nerd Font Mono",
+                "face": "JetBrainsMonoNL Nerd Font",
                 "size": 20
             },
+            "historySize": 99999,
             "intenseTextStyle": "bold",
-            "opacity": 50,
+            "opacity": 100,
             "padding": "0",
             "scrollbarState": "hidden",
+            "startingDirectory": "%USERPROFILE%",
             "useAcrylic": true
         },
         "list": 
@@ -59,6 +63,10 @@
             {
                 "commandline": "\"C:\\Users\\Naman\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe\" -NoLogo",
                 "cursorShape": "filledBox",
+                "font": 
+                {
+                    "face": "JetBrainsMonoNL Nerd Font Mono"
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
@@ -71,6 +79,10 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "font": 
+                {
+                    "face": "JetBrainsMonoNL Nerd Font"
+                },
                 "guid": "{0ce03b19-6a31-5d16-b401-360add3aaa73}",
                 "hidden": false,
                 "name": "kali-linux",
@@ -78,6 +90,7 @@
             }
         ]
     },
+    "rendering.graphicsAPI": "direct3d11",
     "schemes": 
     [
         {
@@ -104,5 +117,7 @@
             "yellow": "#E0AF68"
         }
     ],
-    "themes": []
+    "showTerminalTitleInTitlebar": false,
+    "themes": [],
+    "useAcrylicInTabRow": true
 }

@@ -8,23 +8,35 @@ return {
             update_in_insert = false,
             severity_sort = true,
         })
+
         local on_attach = function(_, bufnr)
-            local opts = { noremap = true, silent = true, buffer = bufnr }
             local keymap = vim.keymap.set
-            keymap("n", "<leader>fo", function() vim.lsp.buf.format() end, opts)
-            keymap("n", "<leader>gd", vim.lsp.buf.definition, {})
-            keymap("n", "K", vim.lsp.buf.hover, {})
+            local opts = { noremap = true, silent = true, buffer = bufnr }
+
+            keymap(
+                "n",
+                "K",
+                function()
+                    vim.lsp.buf.hover()
+                end,
+                { buffer = bufnr }
+            )
+            keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+            keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
         end
+
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
         if ok then
             capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
         end
+
         local servers = {
             pyright = {},
             lua_ls = {},
-            clangd = {}
+            clangd = {},
         }
+
         for name, config in pairs(servers) do
             config.on_attach = on_attach
             config.capabilities = capabilities

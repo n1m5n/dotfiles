@@ -18,6 +18,7 @@ Set-Alias vim nvim
 Set-Alias c Clear-Host
 Set-Alias g git
 Set-Alias ff fastfetch
+Set-Alias nc ncat
 
 # Eza (better ls)
 Remove-Item Alias:ls -ErrorAction SilentlyContinue
@@ -29,6 +30,33 @@ function la {
 }
 function ll {
     & eza -la --icons
+}
+
+# Compile opengl project
+function glbuild {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$file
+    )
+
+    $exe = [System.IO.Path]::GetFileNameWithoutExtension($file)
+
+    g++ $file `
+        -std=c++17 `
+        -IC:/Users/Naman/Documents/libraries/glfw/glfw/include `
+        -LC:/Users/Naman/Documents/libraries/glfw/glfw/lib-mingw-w64 `
+        -lglfw3 `
+        -lopengl32 `
+        -lgdi32 `
+        -luser32 `
+        -lkernel32 `
+        -o "$exe.exe"
+
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "Compiled $file -> $exe.exe successfully!" -ForegroundColor Green
+    } else {
+        Write-Host "Compilation failed." -ForegroundColor Red
+    }
 }
 
 # Compile raylib project
@@ -53,3 +81,4 @@ function raybuild {
 
 # Set prompt
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
+

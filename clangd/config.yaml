@@ -3,12 +3,7 @@ CompileFlags:
     - -xc++
     - -std=c++17
     - --target=x86_64-w64-mingw32
-    - -nostdinc++
-    - -isystem
-    - C:/ProgramData/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++
-    - -isystem
-    - C:/ProgramData/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32
-    - -isystem
-    - C:/ProgramData/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/backward
-    - -IC:/raylib/raylib/src
-    - -IC:/raylib/raylib/src/external
+
+    # For raylib and opengl lsp
+    - -IC:/Users/Naman/Documents/libraries/raylib/raylib/src
+    - -IC:/Users/Naman/Documents/libraries/glfw/glfw/include

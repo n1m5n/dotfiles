@@ -5,24 +5,25 @@ return {
 
     config = function()
         local builtin = require('telescope.builtin')
-        local telescope = require('telescope')
 
-        telescope.setup({
+        require('telescope').setup({
             pickers = {
-                find_files = {
-                    hidden = true,
+                find_files = { hidden = true },
+                live_grep = {
+                    additional_args = function()
+                        return { "--hidden" }
+                    end,
                 },
             },
         })
 
-        -- Keymaps
         vim.keymap.set('n', '<leader>ff', builtin.find_files)
         vim.keymap.set('n', '<leader>fg', builtin.live_grep)
         vim.keymap.set('n', '<leader>fb', builtin.buffers)
 
-        -- Fuzzy find from home directory
+        -- If nvim started in non home dir
         vim.keymap.set('n', '<leader>fr', function()
-            builtin.find_files({ cwd = vim.fn.expand("~"), hidden = true })
+            builtin.find_files({ cwd = vim.fn.expand("~"), hidden = true, no_ignore = false })
         end)
     end
 }
