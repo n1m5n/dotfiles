@@ -4,7 +4,6 @@ return {
         vim.diagnostic.config({
             virtual_text = true,
             signs = true,
-            underline = true,
             update_in_insert = false,
             severity_sort = true,
         })
@@ -13,16 +12,9 @@ return {
             local keymap = vim.keymap.set
             local opts = { noremap = true, silent = true, buffer = bufnr }
 
-            keymap(
-                "n",
-                "K",
-                function()
-                    vim.lsp.buf.hover()
-                end,
-                { buffer = bufnr }
-            )
-            keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-            keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+            keymap("n", "K",  vim.lsp.buf.hover,      opts)
+            keymap("n", "gd", vim.lsp.buf.definition, opts)
+            keymap("n", "gr", vim.lsp.buf.references, opts)
         end
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()

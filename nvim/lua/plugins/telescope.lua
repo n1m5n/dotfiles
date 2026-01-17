@@ -1,30 +1,43 @@
 return {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+    },
 
-    config = function()
-        local builtin = require('telescope.builtin')
+    opts = {
+        defaults = {
+            sorting_strategy = "ascending",
+            layout_config = {
+                prompt_position = "top",
+            },
+        },
 
-        require('telescope').setup({
-            pickers = {
-                find_files = { hidden = true },
-                live_grep = {
-                    additional_args = function()
-                        return { "--hidden" }
-                    end,
+        pickers = {
+            find_files = {
+                find_command = {
+                    "fd",
+                    "--type", "f",
+                    "--hidden",
+                    "--no-ignore",
+                    "--follow",
                 },
             },
-        })
+        },
+    },
 
-        vim.keymap.set('n', '<leader>ff', builtin.find_files)
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep)
-        vim.keymap.set('n', '<leader>fb', builtin.buffers)
-
-        -- If nvim started in non home dir
-        vim.keymap.set('n', '<leader>fr', function()
-            builtin.find_files({ cwd = vim.fn.expand("~"), hidden = true, no_ignore = false })
-        end)
-    end
+    keys = {
+        { "<leader>ff", "<cmd>Telescope find_files<cr>" },
+        { "<leader>fg", "<cmd>Telescope live_grep<cr>" },
+        { "<leader>fb", "<cmd>Telescope buffers<cr>" },
+        {
+            "<leader>fr",
+            function()
+                require("telescope.builtin").find_files({
+                    cwd = vim.fn.expand("~"),
+                })
+            end,
+        },
+    },
 }
 

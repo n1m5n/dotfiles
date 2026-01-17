@@ -26,3 +26,7 @@ vim.opt.termguicolors = true
 
 -- Intro message (keep nothing)
 vim.opt.shortmess:append("I")
+
+if vim.g.neovide then
+    vim.g.neovide_fullscreen = true
+end

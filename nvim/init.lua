@@ -1,5 +1,5 @@
 require("core.options")
-require("core.keybinds")
+require("core.keymaps")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

@@ -1,0 +1,86 @@
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
+
+-- Leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- Save file
+keymap('n', '<leader>s', '<cmd>w<CR>', opts)
+
+-- Quit file
+keymap('n', '<C-q>', '<cmd>q<CR>', opts)
+
+-- Create splits
+keymap('n', '<leader>vs', '<cmd>vsplit<CR>', opts)
+keymap('n', '<leader>sp', '<cmd>split<CR>', opts)
+
+-- Navigate splits
+keymap('n', '<C-k>', '<C-w>k', opts)
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
+
+-- Buffers
+keymap('n', '<leader>to', '<cmd>enew<CR>', opts)
+keymap('n', '<leader>tx', '<cmd>bd<CR>', opts)
+keymap('n', '<leader>tl', '<cmd>bnext<CR>', opts)
+keymap('n', '<leader>th', '<cmd>bprevious<CR>', opts)
+
+-- Resize with arrows
+keymap("n", "<C-Up>", ":resize -1<CR>", opts)
+keymap("n", "<C-Down>", ":resize +1<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -1<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +1<CR>", opts)
+
+-- Create Terminal
+keymap("n", "<leader>tt", ":terminal pwsh<CR>i", opts)
+keymap("n", "<leader>nt", ":vsplit | terminal pwsh<CR>i", opts)
+
+-- Terminal navigation
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", opts)
+
+-- Terminal exit
+keymap("t", "<C-q>", function()
+    vim.cmd("stopinsert")
+    if #vim.api.nvim_tabpage_list_wins(0) > 1 then
+        vim.cmd("close")
+    else
+        vim.cmd("qa")
+    end
+end, opts)
+
+-- Escape easier
+keymap('i', 'jj', '<Esc>', opts)
+
+-- Stop highlight
+keymap('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>', opts)
+
+-- For visible lines
+keymap('n', 'j', 'gj', opts)
+keymap('n', 'k', 'gk', opts)
+
+if vim.g.neovide then
+    vim.g.neovide_scale_factor = 1.0
+
+    local change_scale = function(delta)
+        vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
+    end
+
+    -- Zoom in and out
+    keymap("n", "<C-=>", function() change_scale(0.1) end)
+    keymap("n", "<C-->", function() change_scale(-0.1) end)
+    keymap("n", "<C-0>", function() vim.g.neovide_scale_factor = 1.0 end)
+
+    -- Copy / paste
+    keymap({ "n", "x" }, "<C-S-C>", '"+y')
+    keymap({ "n", "x" }, "<C-S-V>", '"+p')
+    keymap("i", "<C-S-V>", '<C-R>+')
+    keymap("c", "<C-S-V>", "<C-R>+")
+
+    -- Fullscreen toggle
+    keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", opts)
+end
