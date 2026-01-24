@@ -1,3 +1,5 @@
+-- Competitive programming
+
 return {
     "CRAG666/code_runner.nvim",
     config = function()

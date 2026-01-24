@@ -62,25 +62,3 @@ keymap('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>', opts)
 -- For visible lines
 keymap('n', 'j', 'gj', opts)
 keymap('n', 'k', 'gk', opts)
-
-if vim.g.neovide then
-    vim.g.neovide_scale_factor = 1.0
-
-    local change_scale = function(delta)
-        vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
-    end
-
-    -- Zoom in and out
-    keymap("n", "<C-=>", function() change_scale(0.1) end)
-    keymap("n", "<C-->", function() change_scale(-0.1) end)
-    keymap("n", "<C-0>", function() vim.g.neovide_scale_factor = 1.0 end)
-
-    -- Copy / paste
-    keymap({ "n", "x" }, "<C-S-C>", '"+y')
-    keymap({ "n", "x" }, "<C-S-V>", '"+p')
-    keymap("i", "<C-S-V>", '<C-R>+')
-    keymap("c", "<C-S-V>", "<C-R>+")
-
-    -- Fullscreen toggle
-    keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", opts)
-end
