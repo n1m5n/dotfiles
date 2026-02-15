@@ -14,8 +14,9 @@ Set-PSReadLineOption -Colors @{
 $PSStyle.FileInfo.Directory = ""
 
 # Aliases
+Set-Alias v nvim
 Set-Alias vim nvim
-Set-Alias c Clear-Host
+Set-Alias cat bat
 Set-Alias g git
 Set-Alias ff fastfetch
 Set-Alias nc ncat
@@ -70,7 +71,7 @@ function raybuild {
     $exe = [System.IO.Path]::GetFileNameWithoutExtension($file)
 
     # Compile using the exact command that works
-    g++ $file -IC:/raylib/raylib/src -LC:/raylib/raylib/build/raylib -lraylib -lopengl32 -lgdi32 -lwinmm -o "$exe.exe"
+    g++ $file -IC:/Users/Naman/Documents/libraries/raylib/raylib/src -LC:/Users/Naman/Documents/libraries/raylib/raylib/build/raylib -lraylib -lopengl32 -lgdi32 -lwinmm -o "$exe.exe"
 
     if ($LASTEXITCODE -eq 0) {
         Write-Host "Compiled $file -> $exe.exe successfully!" -ForegroundColor Green
@@ -79,6 +80,34 @@ function raybuild {
     }
 }
 
+# Codeforces generate file
+function cf {
+    param(
+        [Parameter(Position = 0)]
+        [string]$Name = "main"
+    )
+
+    $content = @"
+#include <bits/stdc++.h>
+using namespace std;
+
+#define u64 uint64_t
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+}
+"@
+
+    $file = "$Name.cpp"
+    Set-Content -Path $file -Value $content -Encoding UTF8
+    Write-Host "Created $file"
+}
+
+
 # Set prompt
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
 
+# Vim for shell
+Set-PSReadlineOption -EditMode Vi

@@ -1,5 +1,6 @@
 return {
     "stevearc/oil.nvim",
+    lazy = false,
     config = function()
         require("oil").setup({
             watch_for_changes = true,

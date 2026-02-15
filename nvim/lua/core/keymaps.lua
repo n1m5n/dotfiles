@@ -5,11 +5,10 @@ local keymap = vim.keymap.set
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Save file
-keymap('n', '<leader>s', '<cmd>w<CR>', opts)
-
--- Quit file
+-- Save/quit file
+keymap('n', '<C-s>', '<cmd>w<CR>', opts)
 keymap('n', '<C-q>', '<cmd>q<CR>', opts)
+keymap('n', '<C-x>', '<cmd>x<CR>', opts)
 
 -- Create splits
 keymap('n', '<leader>vs', '<cmd>vsplit<CR>', opts)
@@ -24,17 +23,14 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 -- Buffers
 keymap('n', '<leader>to', '<cmd>enew<CR>', opts)
 keymap('n', '<leader>tx', '<cmd>bd<CR>', opts)
-keymap('n', '<leader>tl', '<cmd>bnext<CR>', opts)
-keymap('n', '<leader>th', '<cmd>bprevious<CR>', opts)
 
--- Resize with arrows
+-- Resize buffer with arrows
 keymap("n", "<C-Up>", ":resize -1<CR>", opts)
 keymap("n", "<C-Down>", ":resize +1<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -1<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +1<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +1<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -1<CR>", opts)
 
 -- Create Terminal
-keymap("n", "<leader>tt", ":terminal pwsh<CR>i", opts)
 keymap("n", "<leader>nt", ":vsplit | terminal pwsh<CR>i", opts)
 
 -- Terminal navigation
@@ -62,3 +58,4 @@ keymap('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>', opts)
 -- For visible lines
 keymap('n', 'j', 'gj', opts)
 keymap('n', 'k', 'gk', opts)
+

@@ -1,5 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
+    lazy = false,
+    priority = 1000,
     config = function()
         vim.diagnostic.config({
             virtual_text = true,

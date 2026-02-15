@@ -1,10 +1,11 @@
 return {
     "nvim-telescope/telescope.nvim",
+    lazy = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
+        'nvim-telescope/telescope-fzf-native.nvim',
         "nvim-tree/nvim-web-devicons",
     },
-
     opts = {
         defaults = {
             sorting_strategy = "ascending",
@@ -27,9 +28,8 @@ return {
     },
 
     keys = {
-        { "<leader>ff", "<cmd>Telescope find_files<cr>" },
-        { "<leader>fg", "<cmd>Telescope live_grep<cr>" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>" },
+        { "<leader>ff", "<cmd>Telescope find_files<cr>" },
         {
             "<leader>fr",
             function()
@@ -38,6 +38,14 @@ return {
                 })
             end,
         },
+        {
+            "<leader>fg",
+            function()
+                require("telescope.builtin").live_grep({
+                    cwd = vim.fn.expand("~"),
+                })
+            end,
+        }
     },
 }
 

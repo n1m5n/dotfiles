@@ -29,6 +29,8 @@ local kind_icons = {
 return {
     {
         "hrsh7th/nvim-cmp",
+        lazy = false,
+        priority = 1000,
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",

@@ -1,7 +1,6 @@
--- Competitive programming
-
 return {
     "CRAG666/code_runner.nvim",
+    lazy = false,
     config = function()
         require("code_runner").setup({
             filetype = {

@@ -31,12 +31,12 @@
     {
         "defaults": 
         {
-            "colorScheme": "Tokyo Night",
+            "colorScheme": "Vague",
             "elevate": false,
             "font": 
             {
-                "face": "JetBrainsMonoNL Nerd Font",
-                "size": 20
+                "face": "JetBrainsMono Nerd Font Mono",
+                "size": 26
             },
             "historySize": 99999,
             "intenseTextStyle": "bold",
@@ -65,10 +65,11 @@
                 "cursorShape": "filledBox",
                 "font": 
                 {
-                    "face": "JetBrainsMonoNL Nerd Font Mono"
+                    "face": "JetBrainsMono Nerd Font Mono"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
+                "intenseTextStyle": "bold",
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
             },
@@ -79,13 +80,9 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "font": 
-                {
-                    "face": "JetBrainsMonoNL Nerd Font"
-                },
-                "guid": "{0ce03b19-6a31-5d16-b401-360add3aaa73}",
+                "guid": "{7955410b-3880-5efb-b485-dab12972bc7c}",
                 "hidden": false,
-                "name": "kali-linux",
+                "name": "Ubuntu",
                 "source": "Microsoft.WSL"
             }
         ]
@@ -94,27 +91,27 @@
     "schemes": 
     [
         {
-            "background": "#1A1B26",
-            "black": "#15161E",
-            "blue": "#7AA2F7",
-            "brightBlack": "#414868",
-            "brightBlue": "#7AA2F7",
-            "brightCyan": "#7DCFFF",
-            "brightGreen": "#9ECE6A",
-            "brightPurple": "#9D7CD8",
-            "brightRed": "#F7768E",
-            "brightWhite": "#C0CAF5",
-            "brightYellow": "#E0AF68",
-            "cursorColor": "#C0CAF5",
-            "cyan": "#7DCFFF",
-            "foreground": "#C0CAF5",
-            "green": "#9ECE6A",
-            "name": "Tokyo Night",
-            "purple": "#BB9AF7",
-            "red": "#F7768E",
-            "selectionBackground": "#283457",
-            "white": "#A9B1D6",
-            "yellow": "#E0AF68"
+            "background": "#141414",
+            "black": "#252530",
+            "blue": "#6E94B2",
+            "brightBlack": "#606079",
+            "brightBlue": "#8BA9C1",
+            "brightCyan": "#BEBEDA",
+            "brightGreen": "#99B782",
+            "brightPurple": "#C9B1CA",
+            "brightRed": "#E08398",
+            "brightWhite": "#D7D7D7",
+            "brightYellow": "#F5CB96",
+            "cursorColor": "#CDCDCD",
+            "cyan": "#AEAED1",
+            "foreground": "#CDCDCD",
+            "green": "#7FA563",
+            "name": "Vague",
+            "purple": "#BB9DBD",
+            "red": "#D8647E",
+            "selectionBackground": "#252530",
+            "white": "#CDCDCD",
+            "yellow": "#F3BE7C"
         }
     ],
     "showTerminalTitleInTitlebar": false,
