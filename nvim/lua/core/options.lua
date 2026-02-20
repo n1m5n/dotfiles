@@ -1,28 +1,23 @@
--- Line nums
+vim.opt.guicursor = ""
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Cursor
-vim.opt.cursorline = true
-vim.opt.showmode = false
-
--- Wrap
 vim.opt.wrap = false
 
--- Tabs and indents
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
--- Files
 vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 vim.opt.undofile = true
-vim.opt.writebackup = false
 
--- Colors
+vim.opt.hlsearch = false
+
+vim.opt.updatetime = 50
+
 vim.opt.termguicolors = true
-
--- Intro message (keep nothing)
-vim.opt.shortmess:append("I")
